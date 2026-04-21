@@ -1,0 +1,6 @@
+IN REACTJS
+
+External CSS
+Internal/Inline CSS
+
+in html we make index.html and make style.css and we link file with index.html to connect css.

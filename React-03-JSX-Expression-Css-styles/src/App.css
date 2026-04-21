@@ -1,0 +1,9 @@
+body {
+  background-color: lightgray;
+}
+
+h1 {
+  color : #010101;
+  font-size: 2rem;
+  text-align: center;
+}
