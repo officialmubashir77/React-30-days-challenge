@@ -11,8 +11,14 @@ const App = () => {
         <h1>ReactJS Syntax & CSS</h1>
 
         <p>This is a paragraph.</p>
+
+        {/* This is JSX expression */}
         <p>Name: <span>{myName.toUpperCase()}</span></p>
+
+        {/* This is JSX expression */}
         <p>Age: <span>{myAge}</span></p>
+
+        
         <p>
           Can drive: <span>{canDrive ? "Yes" : "No"}</span>
         </p>

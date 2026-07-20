@@ -27,6 +27,9 @@ const App = () => {
     <div>
       <h1 >Hello, {name}!</h1>
 
+      {/* We cant use direct object in JSX */}
+      {/* <h2 >This is a product: {product}</h2> */}
+
       <h2 >This is a product: {JSON.stringify(product)}!</h2>
 
       <h2 >These are the cars: {cars.toString()}!</h2>
