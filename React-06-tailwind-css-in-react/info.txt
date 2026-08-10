@@ -1,0 +1,431 @@
+If we don’t use Tailwind CSS and write all the CSS manually, it can take much more time to build a web page.
+
+Tailwind CSS is a utility-first CSS framework that provides predefined classes for styling elements, which helps us build and design web pages faster. It is similar to Bootstrap in the sense that both provide ready-to-use CSS classes, but Tailwind gives us more flexibility and control over the design.
+
+# Tailwind CSS Basic Notes
+
+## Background Color
+
+bg-black
+bg-white
+bg-red-500
+bg-blue-500
+bg-green-500
+bg-yellow-500
+bg-purple-500
+
+## Custom Colors
+
+bg-[#dadada]        // Custom background color
+bg-[tomato]         // Named custom color
+
+text-[#099789]      // Custom text color
+
+---
+
+## Padding
+
+p-1   = padding all sides
+p-2
+p-3
+p-4
+
+pt-4  = padding-top
+pr-4  = padding-right
+pb-4  = padding-bottom
+pl-4  = padding-left
+
+px-4  = padding left + right
+py-4  = padding top + bottom
+
+Example:
+<div class="px-4 py-2">
+    Button
+</div>
+
+---
+
+## Margin
+
+m-4   = margin all sides
+
+mt-4  = margin-top
+mr-4  = margin-right
+mb-4  = margin-bottom
+ml-4  = margin-left
+
+mx-4  = margin left + right
+my-4  = margin top + bottom
+
+mx-auto = horizontally center element
+
+Example:
+<div class="w-96 mx-auto">
+    Center Div
+</div>
+
+---
+
+## Common Spacing Values
+
+0  = 0px
+1  = 4px
+2  = 8px
+3  = 12px
+4  = 16px
+5  = 20px
+6  = 24px
+8  = 32px
+10 = 40px
+12 = 48px
+
+Example:
+
+p-4  = 16px padding
+m-4  = 16px margin
+gap-4 = 16px gap
+
+---
+
+## Width
+
+w-4
+w-8
+w-16
+w-32
+w-64
+w-96
+
+w-full       = width: 100%
+w-screen     = viewport width
+w-auto       = width: auto
+
+w-1/2        = 50%
+w-1/3        = 33.33%
+w-2/3        = 66.66%
+w-1/4        = 25%
+w-3/4        = 75%
+
+Custom Width:
+
+w-[300px]
+w-[50%]
+
+---
+
+## Height
+
+h-4
+h-10
+h-20
+h-32
+h-64
+
+h-full       = height: 100%
+h-screen     = viewport height
+h-auto       = height: auto
+
+Custom Height:
+
+h-[300px]
+h-[50vh]
+
+---
+
+## Min / Max Width
+
+min-w-0
+min-w-full
+
+max-w-sm
+max-w-md
+max-w-lg
+max-w-xl
+max-w-2xl
+max-w-full
+
+Example:
+
+<div class="max-w-xl mx-auto">
+</div>
+
+---
+
+## Text Color
+
+text-black
+text-white
+text-red-500
+text-blue-500
+text-green-500
+
+Custom:
+
+text-[#123456]
+
+---
+
+## Font Size
+
+text-xs
+text-sm
+text-base
+text-lg
+text-xl
+text-2xl
+text-3xl
+text-4xl
+text-5xl
+
+Example:
+
+<h1 class="text-4xl">
+    Heading
+</h1>
+
+---
+
+## Font Weight
+
+font-thin
+font-light
+font-normal
+font-medium
+font-semibold
+font-bold
+font-extrabold
+
+Example:
+
+<h1 class="font-bold">
+    Hello
+</h1>
+
+---
+
+## Text Alignment
+
+text-left
+text-center
+text-right
+text-justify
+
+---
+
+## Border
+
+border
+border-2
+border-4
+
+border-black
+border-red-500
+border-blue-500
+
+border-t
+border-r
+border-b
+border-l
+
+Custom Border Color:
+
+border-[#dadada]
+
+---
+
+## Border Radius
+
+rounded
+rounded-sm
+rounded-md
+rounded-lg
+rounded-xl
+rounded-2xl
+rounded-3xl
+rounded-full
+
+Example:
+
+<button class="rounded-lg">
+    Button
+</button>
+
+---
+
+## Display
+
+block
+inline
+inline-block
+hidden
+
+flex
+grid
+
+---
+
+## Flexbox
+
+flex
+
+flex-row
+flex-col
+
+justify-start
+justify-center
+justify-end
+justify-between
+justify-around
+justify-evenly
+
+items-start
+items-center
+items-end
+
+Example:
+
+<div class="flex justify-center items-center">
+</div>
+
+---
+
+## Gap
+
+gap-1
+gap-2
+gap-4
+gap-6
+gap-8
+
+gap-x-4 = horizontal gap
+gap-y-4 = vertical gap
+
+---
+
+## Grid
+
+grid
+
+grid-cols-1
+grid-cols-2
+grid-cols-3
+grid-cols-4
+grid-cols-6
+grid-cols-12
+
+Example:
+
+<div class="grid grid-cols-3 gap-4">
+</div>
+
+---
+
+## Position
+
+relative
+absolute
+fixed
+sticky
+static
+
+top-0
+right-0
+bottom-0
+left-0
+
+top-4
+left-4
+
+---
+
+## Overflow
+
+overflow-hidden
+overflow-auto
+overflow-scroll
+overflow-visible
+
+overflow-x-auto
+overflow-y-auto
+
+---
+
+## Cursor
+
+cursor-pointer
+cursor-default
+cursor-not-allowed
+
+---
+
+## Shadow
+
+shadow-sm
+shadow
+shadow-md
+shadow-lg
+shadow-xl
+shadow-2xl
+shadow-none
+
+---
+
+## Opacity
+
+opacity-0
+opacity-25
+opacity-50
+opacity-75
+opacity-100
+
+---
+
+## Hover
+
+hover:bg-blue-500
+hover:text-white
+hover:border-black
+hover:opacity-80
+
+Example:
+
+<button class="bg-blue-500 hover:bg-blue-600">
+    Button
+</button>
+
+---
+
+## Responsive Design
+
+sm:
+md:
+lg:
+xl:
+2xl:
+
+Example:
+
+<div class="w-full md:w-1/2 lg:w-1/3">
+</div>
+
+Mobile  = full width
+Tablet  = half width
+Large   = one-third width
+
+---
+
+## Very Common Example
+
+<div
+  class="
+    w-full
+    max-w-md
+    mx-auto
+    p-6
+    bg-white
+    rounded-xl
+    shadow-lg
+  "
+>
+    Card
+</div>
