@@ -1,0 +1,3990 @@
+If we don’t use Tailwind CSS and write all the CSS manually, it can take much more time to build a web page.
+
+Tailwind CSS is a utility-first CSS framework that provides predefined classes for styling elements, which helps us build and design web pages faster. It is similar to Bootstrap in the sense that both provide ready-to-use CSS classes, but Tailwind gives us more flexibility and control over the design.
+
+# Tailwind CSS Basic Notes
+
+TAILWIND CSS COMPLETE NOTES / CHEAT SHEET
+=========================================
+
+Purpose:
+- React + Vite + Tailwind CSS ke liye comprehensive utility-class reference.
+- Tailwind me literally har possible class ki finite list nahi hoti, kyun ke arbitrary values
+  (for example w-[347px], bg-[#123456], grid-cols-[200px_1fr]) aur custom theme values
+  se unlimited utilities ban sakti hain.
+- Is file me major/core utility families, common values, patterns, variants, responsive classes,
+  states, dark mode, transforms, filters, forms, SVG, accessibility, etc. cover kiye gaye hain.
+
+React note:
+- HTML me: class="..."
+- React/JSX me: className="..."
+
+Example:
+<div className="rounded-xl bg-blue-600 p-4 text-white shadow-lg">
+  Hello
+</div>
+
+
+============================================================
+1. COLOR SYSTEM
+============================================================
+
+Common named colors:
+transparent
+current
+black
+white
+
+Color families (use with text-, bg-, border-, ring-, outline-, fill-, stroke-, etc.):
+red
+orange
+amber
+yellow
+lime
+green
+emerald
+teal
+cyan
+sky
+blue
+indigo
+violet
+purple
+fuchsia
+pink
+rose
+slate
+gray
+zinc
+neutral
+stone
+
+Common shade scale:
+50
+100
+200
+300
+400
+500
+600
+700
+800
+900
+950
+
+Patterns:
+bg-blue-500
+bg-blue-600
+text-red-500
+text-slate-400
+border-emerald-500
+ring-violet-500
+outline-orange-500
+fill-cyan-500
+stroke-pink-500
+
+Opacity modifier:
+bg-blue-500/50
+text-white/80
+border-white/10
+ring-black/20
+
+Custom colors:
+bg-[#dadada]
+bg-[tomato]
+text-[#099789]
+border-[#123456]
+bg-[rgb(20_30_40)]
+bg-[oklch(70%_0.15_250)]
+
+
+============================================================
+2. PADDING
+============================================================
+
+All sides:
+p-0
+p-px
+p-0.5
+p-1
+p-1.5
+p-2
+p-2.5
+p-3
+p-3.5
+p-4
+p-5
+p-6
+p-7
+p-8
+p-9
+p-10
+p-11
+p-12
+p-14
+p-16
+p-20
+p-24
+p-28
+p-32
+p-36
+p-40
+p-44
+p-48
+p-52
+p-56
+p-60
+p-64
+p-72
+p-80
+p-96
+
+Directions:
+pt-*   = padding-top
+pr-*   = padding-right
+pb-*   = padding-bottom
+pl-*   = padding-left
+
+Axes:
+px-*   = left + right
+py-*   = top + bottom
+
+Logical directions:
+ps-*   = padding-inline-start
+pe-*   = padding-inline-end
+
+Custom:
+p-[18px]
+px-[5%]
+py-[2rem]
+
+Examples:
+p-4
+px-6
+py-3
+pt-10
+pb-8
+ps-4
+pe-4
+
+
+============================================================
+3. MARGIN
+============================================================
+
+All sides:
+m-0
+m-px
+m-0.5
+m-1
+m-1.5
+m-2
+m-2.5
+m-3
+m-3.5
+m-4
+m-5
+m-6
+m-7
+m-8
+m-9
+m-10
+m-11
+m-12
+m-14
+m-16
+m-20
+m-24
+m-28
+m-32
+m-36
+m-40
+m-44
+m-48
+m-52
+m-56
+m-60
+m-64
+m-72
+m-80
+m-96
+
+Directions:
+mt-*
+mr-*
+mb-*
+ml-*
+
+Axes:
+mx-*
+my-*
+
+Logical:
+ms-*
+me-*
+
+Auto:
+m-auto
+mx-auto
+my-auto
+mt-auto
+mr-auto
+mb-auto
+ml-auto
+ms-auto
+me-auto
+
+Negative:
+-m-4
+-mx-4
+-my-4
+-mt-4
+-mr-4
+-mb-4
+-ml-4
+-ms-4
+-me-4
+
+Custom:
+m-[25px]
+mt-[-10px]
+mx-[7vw]
+
+
+============================================================
+4. SPACING SCALE QUICK REFERENCE
+============================================================
+
+0    = 0px
+px   = 1px
+0.5  = 2px
+1    = 4px
+1.5  = 6px
+2    = 8px
+2.5  = 10px
+3    = 12px
+3.5  = 14px
+4    = 16px
+5    = 20px
+6    = 24px
+7    = 28px
+8    = 32px
+9    = 36px
+10   = 40px
+11   = 44px
+12   = 48px
+14   = 56px
+16   = 64px
+20   = 80px
+24   = 96px
+28   = 112px
+32   = 128px
+36   = 144px
+40   = 160px
+44   = 176px
+48   = 192px
+52   = 208px
+56   = 224px
+60   = 240px
+64   = 256px
+72   = 288px
+80   = 320px
+96   = 384px
+
+Used by many utilities:
+p-*
+m-*
+gap-*
+space-*
+w-*
+h-*
+size-*
+top-*
+left-*
+translate-*
+scroll-m-*
+scroll-p-*
+
+
+============================================================
+5. SPACE BETWEEN CHILDREN
+============================================================
+
+space-x-0
+space-x-1
+space-x-2
+space-x-3
+space-x-4
+space-x-6
+space-x-8
+
+space-y-0
+space-y-1
+space-y-2
+space-y-3
+space-y-4
+space-y-6
+space-y-8
+
+space-x-reverse
+space-y-reverse
+
+Custom:
+space-x-[18px]
+space-y-[1.5rem]
+
+
+============================================================
+6. WIDTH
+============================================================
+
+Numeric:
+w-0
+w-px
+w-0.5
+w-1
+w-2
+w-3
+w-4
+w-5
+w-6
+w-8
+w-10
+w-12
+w-16
+w-20
+w-24
+w-32
+w-40
+w-48
+w-56
+w-64
+w-72
+w-80
+w-96
+
+Fractions:
+w-1/2
+w-1/3
+w-2/3
+w-1/4
+w-2/4
+w-3/4
+w-1/5
+w-2/5
+w-3/5
+w-4/5
+w-1/6
+w-2/6
+w-3/6
+w-4/6
+w-5/6
+w-1/12
+w-2/12
+w-3/12
+w-4/12
+w-5/12
+w-6/12
+w-7/12
+w-8/12
+w-9/12
+w-10/12
+w-11/12
+
+Special:
+w-auto
+w-full
+w-screen
+w-dvw
+w-svw
+w-lvw
+w-min
+w-max
+w-fit
+
+Custom:
+w-[300px]
+w-[50%]
+w-[70vw]
+w-[calc(100%-2rem)]
+
+
+============================================================
+7. MIN WIDTH
+============================================================
+
+min-w-0
+min-w-px
+min-w-full
+min-w-min
+min-w-max
+min-w-fit
+min-w-screen
+min-w-dvw
+min-w-svw
+min-w-lvw
+
+Numeric/fraction patterns:
+min-w-24
+min-w-64
+min-w-1/2
+
+Custom:
+min-w-[250px]
+
+
+============================================================
+8. MAX WIDTH
+============================================================
+
+max-w-none
+max-w-xs
+max-w-sm
+max-w-md
+max-w-lg
+max-w-xl
+max-w-2xl
+max-w-3xl
+max-w-4xl
+max-w-5xl
+max-w-6xl
+max-w-7xl
+max-w-full
+max-w-min
+max-w-max
+max-w-fit
+max-w-prose
+max-w-screen
+max-w-dvw
+max-w-svw
+max-w-lvw
+
+Custom:
+max-w-[1200px]
+
+Common container:
+max-w-7xl mx-auto
+
+
+============================================================
+9. HEIGHT
+============================================================
+
+Numeric:
+h-0
+h-px
+h-0.5
+h-1
+h-2
+h-3
+h-4
+h-5
+h-6
+h-8
+h-10
+h-12
+h-16
+h-20
+h-24
+h-32
+h-40
+h-48
+h-56
+h-64
+h-72
+h-80
+h-96
+
+Fractions:
+h-1/2
+h-1/3
+h-2/3
+h-1/4
+h-2/4
+h-3/4
+h-1/5
+h-2/5
+h-3/5
+h-4/5
+h-1/6
+h-5/6
+
+Special:
+h-auto
+h-full
+h-screen
+h-dvh
+h-svh
+h-lvh
+h-min
+h-max
+h-fit
+
+Custom:
+h-[300px]
+h-[50vh]
+
+
+============================================================
+10. MIN HEIGHT
+============================================================
+
+min-h-0
+min-h-full
+min-h-screen
+min-h-dvh
+min-h-svh
+min-h-lvh
+min-h-min
+min-h-max
+min-h-fit
+
+Custom:
+min-h-[500px]
+
+
+============================================================
+11. MAX HEIGHT
+============================================================
+
+max-h-none
+max-h-full
+max-h-screen
+max-h-dvh
+max-h-svh
+max-h-lvh
+max-h-min
+max-h-max
+max-h-fit
+
+Numeric:
+max-h-32
+max-h-64
+max-h-96
+
+Custom:
+max-h-[600px]
+
+
+============================================================
+12. SIZE (WIDTH + HEIGHT TOGETHER)
+============================================================
+
+size-0
+size-px
+size-1
+size-2
+size-3
+size-4
+size-5
+size-6
+size-8
+size-10
+size-12
+size-16
+size-20
+size-24
+size-32
+size-40
+size-48
+size-64
+size-full
+size-auto
+
+Custom:
+size-[42px]
+
+
+============================================================
+13. DISPLAY
+============================================================
+
+block
+inline-block
+inline
+flex
+inline-flex
+grid
+inline-grid
+flow-root
+contents
+list-item
+hidden
+
+Table display:
+table
+inline-table
+table-caption
+table-cell
+table-column
+table-column-group
+table-footer-group
+table-header-group
+table-row-group
+table-row
+
+
+============================================================
+14. POSITION
+============================================================
+
+static
+relative
+absolute
+fixed
+sticky
+
+
+============================================================
+15. INSET / TOP / RIGHT / BOTTOM / LEFT
+============================================================
+
+All:
+inset-0
+inset-1
+inset-2
+inset-4
+inset-auto
+inset-full
+-inset-1
+-inset-4
+
+Axes:
+inset-x-0
+inset-x-4
+inset-y-0
+inset-y-4
+
+Individual:
+top-0
+top-1
+top-2
+top-4
+top-full
+top-auto
+
+right-0
+right-4
+right-full
+right-auto
+
+bottom-0
+bottom-4
+bottom-full
+bottom-auto
+
+left-0
+left-4
+left-full
+left-auto
+
+Logical:
+start-0
+start-4
+end-0
+end-4
+
+Negative:
+-top-4
+-right-4
+-bottom-4
+-left-4
+
+Fractions:
+top-1/2
+left-1/2
+right-1/2
+bottom-1/2
+
+Custom:
+top-[25px]
+left-[10%]
+
+
+============================================================
+16. Z-INDEX
+============================================================
+
+z-0
+z-10
+z-20
+z-30
+z-40
+z-50
+z-auto
+
+Custom:
+z-[100]
+z-[-1]
+
+
+============================================================
+17. FLOAT / CLEAR
+============================================================
+
+Float:
+float-right
+float-left
+float-start
+float-end
+float-none
+
+Clear:
+clear-left
+clear-right
+clear-both
+clear-start
+clear-end
+clear-none
+
+
+============================================================
+18. ISOLATION
+============================================================
+
+isolate
+isolation-auto
+
+
+============================================================
+19. BOX SIZING
+============================================================
+
+box-border
+box-content
+
+
+============================================================
+20. BOX DECORATION BREAK
+============================================================
+
+box-decoration-slice
+box-decoration-clone
+
+
+============================================================
+21. OBJECT FIT
+============================================================
+
+object-contain
+object-cover
+object-fill
+object-none
+object-scale-down
+
+
+============================================================
+22. OBJECT POSITION
+============================================================
+
+object-bottom
+object-center
+object-left
+object-left-bottom
+object-left-top
+object-right
+object-right-bottom
+object-right-top
+object-top
+
+Custom:
+object-[25%_75%]
+
+
+============================================================
+23. OVERFLOW
+============================================================
+
+overflow-auto
+overflow-hidden
+overflow-clip
+overflow-visible
+overflow-scroll
+
+overflow-x-auto
+overflow-x-hidden
+overflow-x-clip
+overflow-x-visible
+overflow-x-scroll
+
+overflow-y-auto
+overflow-y-hidden
+overflow-y-clip
+overflow-y-visible
+overflow-y-scroll
+
+
+============================================================
+24. OVERSCROLL BEHAVIOR
+============================================================
+
+overscroll-auto
+overscroll-contain
+overscroll-none
+
+overscroll-x-auto
+overscroll-x-contain
+overscroll-x-none
+
+overscroll-y-auto
+overscroll-y-contain
+overscroll-y-none
+
+
+============================================================
+25. VISIBILITY
+============================================================
+
+visible
+invisible
+collapse
+
+
+============================================================
+26. BREAK BEFORE / AFTER / INSIDE
+============================================================
+
+Break after:
+break-after-auto
+break-after-avoid
+break-after-all
+break-after-avoid-page
+break-after-page
+break-after-left
+break-after-right
+break-after-column
+
+Break before:
+break-before-auto
+break-before-avoid
+break-before-all
+break-before-avoid-page
+break-before-page
+break-before-left
+break-before-right
+break-before-column
+
+Break inside:
+break-inside-auto
+break-inside-avoid
+break-inside-avoid-page
+break-inside-avoid-column
+
+
+============================================================
+27. COLUMNS
+============================================================
+
+columns-auto
+columns-1
+columns-2
+columns-3
+columns-4
+columns-5
+columns-6
+columns-7
+columns-8
+columns-9
+columns-10
+columns-11
+columns-12
+
+Custom:
+columns-[250px]
+
+
+============================================================
+28. ASPECT RATIO
+============================================================
+
+aspect-auto
+aspect-square
+aspect-video
+
+Custom:
+aspect-[4/3]
+aspect-[16/10]
+
+
+============================================================
+29. FLEXBOX - DIRECTION
+============================================================
+
+flex-row
+flex-row-reverse
+flex-col
+flex-col-reverse
+
+
+============================================================
+30. FLEXBOX - WRAP
+============================================================
+
+flex-nowrap
+flex-wrap
+flex-wrap-reverse
+
+
+============================================================
+31. FLEX
+============================================================
+
+flex-1
+flex-auto
+flex-initial
+flex-none
+
+Custom:
+flex-[2_2_0%]
+
+
+============================================================
+32. FLEX BASIS
+============================================================
+
+basis-0
+basis-1
+basis-2
+basis-4
+basis-8
+basis-16
+basis-32
+basis-auto
+basis-full
+basis-1/2
+basis-1/3
+basis-2/3
+basis-1/4
+basis-3/4
+
+Custom:
+basis-[250px]
+
+
+============================================================
+33. FLEX GROW / SHRINK
+============================================================
+
+Grow:
+grow
+grow-0
+
+Shrink:
+shrink
+shrink-0
+
+Custom:
+grow-[2]
+shrink-[2]
+
+
+============================================================
+34. ORDER
+============================================================
+
+order-1
+order-2
+order-3
+order-4
+order-5
+order-6
+order-7
+order-8
+order-9
+order-10
+order-11
+order-12
+order-first
+order-last
+order-none
+
+Custom:
+order-[15]
+
+
+============================================================
+35. GRID TEMPLATE COLUMNS
+============================================================
+
+grid-cols-1
+grid-cols-2
+grid-cols-3
+grid-cols-4
+grid-cols-5
+grid-cols-6
+grid-cols-7
+grid-cols-8
+grid-cols-9
+grid-cols-10
+grid-cols-11
+grid-cols-12
+grid-cols-none
+grid-cols-subgrid
+
+Custom:
+grid-cols-[200px_1fr]
+grid-cols-[1fr_2fr_1fr]
+
+
+============================================================
+36. GRID COLUMN
+============================================================
+
+col-auto
+col-span-1
+col-span-2
+col-span-3
+col-span-4
+col-span-5
+col-span-6
+col-span-7
+col-span-8
+col-span-9
+col-span-10
+col-span-11
+col-span-12
+col-span-full
+
+col-start-1 ... col-start-13
+col-start-auto
+
+col-end-1 ... col-end-13
+col-end-auto
+
+
+============================================================
+37. GRID TEMPLATE ROWS
+============================================================
+
+grid-rows-1
+grid-rows-2
+grid-rows-3
+grid-rows-4
+grid-rows-5
+grid-rows-6
+grid-rows-7
+grid-rows-8
+grid-rows-9
+grid-rows-10
+grid-rows-11
+grid-rows-12
+grid-rows-none
+grid-rows-subgrid
+
+Custom:
+grid-rows-[100px_1fr_auto]
+
+
+============================================================
+38. GRID ROW
+============================================================
+
+row-auto
+row-span-1
+row-span-2
+row-span-3
+row-span-4
+row-span-5
+row-span-6
+row-span-full
+
+row-start-1 ... row-start-13
+row-start-auto
+
+row-end-1 ... row-end-13
+row-end-auto
+
+
+============================================================
+39. GRID AUTO FLOW
+============================================================
+
+grid-flow-row
+grid-flow-col
+grid-flow-dense
+grid-flow-row-dense
+grid-flow-col-dense
+
+
+============================================================
+40. GRID AUTO COLUMNS / ROWS
+============================================================
+
+Auto columns:
+auto-cols-auto
+auto-cols-min
+auto-cols-max
+auto-cols-fr
+
+Auto rows:
+auto-rows-auto
+auto-rows-min
+auto-rows-max
+auto-rows-fr
+
+Custom:
+auto-cols-[200px]
+auto-rows-[minmax(0,2fr)]
+
+
+============================================================
+41. GAP
+============================================================
+
+gap-0
+gap-1
+gap-2
+gap-3
+gap-4
+gap-5
+gap-6
+gap-8
+gap-10
+gap-12
+gap-16
+
+Horizontal:
+gap-x-0
+gap-x-1
+gap-x-2
+gap-x-4
+gap-x-6
+gap-x-8
+
+Vertical:
+gap-y-0
+gap-y-1
+gap-y-2
+gap-y-4
+gap-y-6
+gap-y-8
+
+Custom:
+gap-[18px]
+gap-x-[2rem]
+gap-y-[10%]
+
+
+============================================================
+42. JUSTIFY CONTENT
+============================================================
+
+justify-normal
+justify-start
+justify-end
+justify-center
+justify-between
+justify-around
+justify-evenly
+justify-stretch
+
+
+============================================================
+43. JUSTIFY ITEMS
+============================================================
+
+justify-items-start
+justify-items-end
+justify-items-center
+justify-items-stretch
+justify-items-normal
+
+
+============================================================
+44. JUSTIFY SELF
+============================================================
+
+justify-self-auto
+justify-self-start
+justify-self-end
+justify-self-center
+justify-self-stretch
+
+
+============================================================
+45. ALIGN CONTENT
+============================================================
+
+content-normal
+content-center
+content-start
+content-end
+content-between
+content-around
+content-evenly
+content-baseline
+content-stretch
+
+
+============================================================
+46. ALIGN ITEMS
+============================================================
+
+items-start
+items-end
+items-center
+items-baseline
+items-stretch
+
+
+============================================================
+47. ALIGN SELF
+============================================================
+
+self-auto
+self-start
+self-end
+self-center
+self-stretch
+self-baseline
+
+
+============================================================
+48. PLACE CONTENT / ITEMS / SELF
+============================================================
+
+place-content-center
+place-content-start
+place-content-end
+place-content-between
+place-content-around
+place-content-evenly
+place-content-baseline
+place-content-stretch
+
+place-items-start
+place-items-end
+place-items-center
+place-items-baseline
+place-items-stretch
+
+place-self-auto
+place-self-start
+place-self-end
+place-self-center
+place-self-stretch
+
+
+============================================================
+49. FONT FAMILY
+============================================================
+
+font-sans
+font-serif
+font-mono
+
+Custom:
+font-['Poppins']
+font-[Arial]
+
+
+============================================================
+50. FONT SIZE
+============================================================
+
+text-xs
+text-sm
+text-base
+text-lg
+text-xl
+text-2xl
+text-3xl
+text-4xl
+text-5xl
+text-6xl
+text-7xl
+text-8xl
+text-9xl
+
+Custom:
+text-[18px]
+text-[2.5rem]
+
+Font size + line-height shorthand:
+text-sm/6
+text-base/7
+text-lg/8
+text-[20px]/[30px]
+
+
+============================================================
+51. FONT SMOOTHING
+============================================================
+
+antialiased
+subpixel-antialiased
+
+
+============================================================
+52. FONT STYLE
+============================================================
+
+italic
+not-italic
+
+
+============================================================
+53. FONT WEIGHT
+============================================================
+
+font-thin        = 100
+font-extralight  = 200
+font-light       = 300
+font-normal      = 400
+font-medium      = 500
+font-semibold    = 600
+font-bold        = 700
+font-extrabold   = 800
+font-black       = 900
+
+Custom:
+font-[550]
+
+
+============================================================
+54. FONT VARIANT NUMERIC
+============================================================
+
+normal-nums
+ordinal
+slashed-zero
+lining-nums
+oldstyle-nums
+proportional-nums
+tabular-nums
+diagonal-fractions
+stacked-fractions
+
+
+============================================================
+55. LETTER SPACING
+============================================================
+
+tracking-tighter
+tracking-tight
+tracking-normal
+tracking-wide
+tracking-wider
+tracking-widest
+
+Custom:
+tracking-[0.2em]
+
+
+============================================================
+56. LINE HEIGHT
+============================================================
+
+leading-none
+leading-tight
+leading-snug
+leading-normal
+leading-relaxed
+leading-loose
+
+Numeric:
+leading-3
+leading-4
+leading-5
+leading-6
+leading-7
+leading-8
+leading-9
+leading-10
+
+Custom:
+leading-[1.8]
+leading-[30px]
+
+
+============================================================
+57. LINE CLAMP
+============================================================
+
+line-clamp-1
+line-clamp-2
+line-clamp-3
+line-clamp-4
+line-clamp-5
+line-clamp-6
+line-clamp-none
+
+Custom:
+line-clamp-[8]
+
+
+============================================================
+58. TEXT ALIGNMENT
+============================================================
+
+text-left
+text-center
+text-right
+text-justify
+text-start
+text-end
+
+
+============================================================
+59. TEXT COLOR
+============================================================
+
+text-black
+text-white
+text-transparent
+text-current
+
+Pattern:
+text-red-50 ... text-red-950
+text-blue-50 ... text-blue-950
+text-green-50 ... text-green-950
+text-slate-50 ... text-slate-950
+
+Opacity:
+text-white/50
+text-blue-500/80
+
+Custom:
+text-[#123456]
+
+
+============================================================
+60. TEXT DECORATION LINE
+============================================================
+
+underline
+overline
+line-through
+no-underline
+
+
+============================================================
+61. TEXT DECORATION COLOR
+============================================================
+
+decoration-black
+decoration-white
+decoration-transparent
+decoration-current
+
+Pattern:
+decoration-red-500
+decoration-blue-500
+
+Custom:
+decoration-[#ff0088]
+
+
+============================================================
+62. TEXT DECORATION STYLE
+============================================================
+
+decoration-solid
+decoration-double
+decoration-dotted
+decoration-dashed
+decoration-wavy
+
+
+============================================================
+63. TEXT DECORATION THICKNESS
+============================================================
+
+decoration-auto
+decoration-from-font
+decoration-0
+decoration-1
+decoration-2
+decoration-4
+decoration-8
+
+Custom:
+decoration-[3px]
+
+
+============================================================
+64. UNDERLINE OFFSET
+============================================================
+
+underline-offset-auto
+underline-offset-0
+underline-offset-1
+underline-offset-2
+underline-offset-4
+underline-offset-8
+
+Custom:
+underline-offset-[6px]
+
+
+============================================================
+65. TEXT TRANSFORM
+============================================================
+
+uppercase
+lowercase
+capitalize
+normal-case
+
+
+============================================================
+66. TEXT OVERFLOW
+============================================================
+
+truncate
+text-ellipsis
+text-clip
+
+
+============================================================
+67. TEXT WRAP
+============================================================
+
+text-wrap
+text-nowrap
+text-balance
+text-pretty
+
+
+============================================================
+68. TEXT INDENT
+============================================================
+
+indent-0
+indent-1
+indent-2
+indent-4
+indent-8
+
+Custom:
+indent-[2em]
+
+
+============================================================
+69. VERTICAL ALIGN
+============================================================
+
+align-baseline
+align-top
+align-middle
+align-bottom
+align-text-top
+align-text-bottom
+align-sub
+align-super
+
+Custom:
+align-[4px]
+
+
+============================================================
+70. WHITE SPACE
+============================================================
+
+whitespace-normal
+whitespace-nowrap
+whitespace-pre
+whitespace-pre-line
+whitespace-pre-wrap
+whitespace-break-spaces
+
+
+============================================================
+71. WORD BREAK / OVERFLOW WRAP
+============================================================
+
+break-normal
+break-words
+break-all
+break-keep
+
+
+============================================================
+72. HYPHENS
+============================================================
+
+hyphens-none
+hyphens-manual
+hyphens-auto
+
+
+============================================================
+73. LIST STYLE TYPE
+============================================================
+
+list-none
+list-disc
+list-decimal
+
+Custom:
+list-[square]
+
+
+============================================================
+74. LIST STYLE POSITION
+============================================================
+
+list-inside
+list-outside
+
+
+============================================================
+75. CONTENT
+============================================================
+
+content-none
+
+Custom:
+content-['Hello']
+before:content-['NEW']
+after:content-['*']
+
+
+============================================================
+76. BACKGROUND COLOR
+============================================================
+
+bg-transparent
+bg-current
+bg-black
+bg-white
+
+Pattern:
+bg-red-50 ... bg-red-950
+bg-blue-50 ... bg-blue-950
+bg-slate-50 ... bg-slate-950
+
+Opacity:
+bg-blue-500/10
+bg-black/50
+bg-white/5
+
+Custom:
+bg-[#101827]
+
+
+============================================================
+77. BACKGROUND ATTACHMENT
+============================================================
+
+bg-fixed
+bg-local
+bg-scroll
+
+
+============================================================
+78. BACKGROUND CLIP
+============================================================
+
+bg-clip-border
+bg-clip-padding
+bg-clip-content
+bg-clip-text
+
+Gradient text example:
+bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent
+
+
+============================================================
+79. BACKGROUND ORIGIN
+============================================================
+
+bg-origin-border
+bg-origin-padding
+bg-origin-content
+
+
+============================================================
+80. BACKGROUND POSITION
+============================================================
+
+bg-bottom
+bg-center
+bg-left
+bg-left-bottom
+bg-left-top
+bg-right
+bg-right-bottom
+bg-right-top
+bg-top
+
+Custom:
+bg-position-[center_top_1rem]
+
+
+============================================================
+81. BACKGROUND REPEAT
+============================================================
+
+bg-repeat
+bg-no-repeat
+bg-repeat-x
+bg-repeat-y
+bg-repeat-round
+bg-repeat-space
+
+
+============================================================
+82. BACKGROUND SIZE
+============================================================
+
+bg-auto
+bg-cover
+bg-contain
+
+Custom:
+bg-size-[200px_100px]
+
+
+============================================================
+83. BACKGROUND IMAGE / GRADIENTS
+============================================================
+
+No image:
+bg-none
+
+Custom image:
+bg-[url('/image.jpg')]
+
+Linear gradient directions (Tailwind v4 syntax):
+bg-linear-to-t
+bg-linear-to-tr
+bg-linear-to-r
+bg-linear-to-br
+bg-linear-to-b
+bg-linear-to-bl
+bg-linear-to-l
+bg-linear-to-tl
+
+Custom angle:
+bg-linear-45
+bg-linear-90
+bg-linear-[25deg]
+
+Radial:
+bg-radial
+bg-radial-[at_50%_75%]
+
+Conic:
+bg-conic
+bg-conic-180
+
+Color stops:
+from-blue-500
+via-purple-500
+to-pink-500
+
+Stop positions:
+from-10%
+via-50%
+to-90%
+
+Example:
+bg-linear-to-r from-blue-600 via-violet-600 to-fuchsia-600
+
+
+============================================================
+84. BORDER WIDTH
+============================================================
+
+All:
+border
+border-0
+border-2
+border-4
+border-8
+
+Sides:
+border-t
+border-r
+border-b
+border-l
+
+Logical:
+border-s
+border-e
+
+Specific:
+border-t-0
+border-t-2
+border-r-2
+border-b-2
+border-l-2
+
+Axes:
+border-x
+border-y
+border-x-2
+border-y-2
+
+Custom:
+border-[3px]
+
+
+============================================================
+85. BORDER COLOR
+============================================================
+
+border-transparent
+border-current
+border-black
+border-white
+
+Pattern:
+border-red-500
+border-blue-500
+border-slate-800
+
+Opacity:
+border-white/10
+border-blue-500/50
+
+Side colors:
+border-t-red-500
+border-r-blue-500
+border-b-green-500
+border-l-yellow-500
+
+Custom:
+border-[#dadada]
+
+
+============================================================
+86. BORDER STYLE
+============================================================
+
+border-solid
+border-dashed
+border-dotted
+border-double
+border-hidden
+border-none
+
+
+============================================================
+87. BORDER RADIUS
+============================================================
+
+rounded-none
+rounded-xs
+rounded-sm
+rounded
+rounded-md
+rounded-lg
+rounded-xl
+rounded-2xl
+rounded-3xl
+rounded-4xl
+rounded-full
+
+Sides:
+rounded-t-*
+rounded-r-*
+rounded-b-*
+rounded-l-*
+
+Corners:
+rounded-tl-*
+rounded-tr-*
+rounded-br-*
+rounded-bl-*
+
+Logical:
+rounded-s-*
+rounded-e-*
+rounded-ss-*
+rounded-se-*
+rounded-es-*
+rounded-ee-*
+
+Examples:
+rounded-lg
+rounded-t-2xl
+rounded-bl-xl
+rounded-full
+
+Custom:
+rounded-[20px]
+
+
+============================================================
+88. DIVIDE WIDTH / COLOR / STYLE
+============================================================
+
+Width:
+divide-x
+divide-x-0
+divide-x-2
+divide-x-4
+divide-x-8
+divide-y
+divide-y-0
+divide-y-2
+divide-y-4
+divide-y-8
+divide-x-reverse
+divide-y-reverse
+
+Color:
+divide-gray-200
+divide-slate-700
+divide-white/10
+
+Style:
+divide-solid
+divide-dashed
+divide-dotted
+divide-double
+divide-none
+
+
+============================================================
+89. OUTLINE
+============================================================
+
+Width/style:
+outline
+outline-0
+outline-1
+outline-2
+outline-4
+outline-8
+outline-none
+outline-hidden
+outline-dashed
+outline-dotted
+outline-double
+
+Color:
+outline-black
+outline-white
+outline-blue-500
+outline-transparent
+
+Offset:
+outline-offset-0
+outline-offset-1
+outline-offset-2
+outline-offset-4
+outline-offset-8
+
+Custom:
+outline-[3px]
+outline-offset-[6px]
+
+
+============================================================
+90. RING
+============================================================
+
+Ring width:
+ring
+ring-0
+ring-1
+ring-2
+ring-4
+ring-8
+ring-inset
+
+Ring color:
+ring-blue-500
+ring-red-500
+ring-black
+ring-white
+ring-transparent
+
+Opacity:
+ring-blue-500/50
+
+Ring offset:
+ring-offset-0
+ring-offset-1
+ring-offset-2
+ring-offset-4
+ring-offset-8
+
+Ring offset color:
+ring-offset-white
+ring-offset-slate-950
+
+
+============================================================
+91. BOX SHADOW
+============================================================
+
+shadow-2xs
+shadow-xs
+shadow-sm
+shadow
+shadow-md
+shadow-lg
+shadow-xl
+shadow-2xl
+shadow-none
+
+Color:
+shadow-blue-500
+shadow-blue-500/20
+shadow-black/30
+
+Custom:
+shadow-[0_10px_30px_rgba(0,0,0,0.3)]
+
+
+============================================================
+92. TEXT SHADOW
+============================================================
+
+text-shadow-2xs
+text-shadow-xs
+text-shadow-sm
+text-shadow
+text-shadow-md
+text-shadow-lg
+text-shadow-none
+
+Color modifier examples:
+text-shadow-black/20
+text-shadow-blue-500/40
+
+Custom:
+text-shadow-[0_2px_6px_rgb(0_0_0/0.3)]
+
+
+============================================================
+93. OPACITY
+============================================================
+
+opacity-0
+opacity-5
+opacity-10
+opacity-15
+opacity-20
+opacity-25
+opacity-30
+opacity-40
+opacity-50
+opacity-60
+opacity-70
+opacity-75
+opacity-80
+opacity-90
+opacity-95
+opacity-100
+
+Custom:
+opacity-[0.37]
+
+
+============================================================
+94. MIX BLEND MODE
+============================================================
+
+mix-blend-normal
+mix-blend-multiply
+mix-blend-screen
+mix-blend-overlay
+mix-blend-darken
+mix-blend-lighten
+mix-blend-color-dodge
+mix-blend-color-burn
+mix-blend-hard-light
+mix-blend-soft-light
+mix-blend-difference
+mix-blend-exclusion
+mix-blend-hue
+mix-blend-saturation
+mix-blend-color
+mix-blend-luminosity
+mix-blend-plus-darker
+mix-blend-plus-lighter
+
+
+============================================================
+95. BACKGROUND BLEND MODE
+============================================================
+
+bg-blend-normal
+bg-blend-multiply
+bg-blend-screen
+bg-blend-overlay
+bg-blend-darken
+bg-blend-lighten
+bg-blend-color-dodge
+bg-blend-color-burn
+bg-blend-hard-light
+bg-blend-soft-light
+bg-blend-difference
+bg-blend-exclusion
+bg-blend-hue
+bg-blend-saturation
+bg-blend-color
+bg-blend-luminosity
+
+
+============================================================
+96. FILTER - BLUR
+============================================================
+
+blur-none
+blur-xs
+blur-sm
+blur
+blur-md
+blur-lg
+blur-xl
+blur-2xl
+blur-3xl
+
+Custom:
+blur-[6px]
+
+
+============================================================
+97. FILTER - BRIGHTNESS
+============================================================
+
+brightness-0
+brightness-50
+brightness-75
+brightness-90
+brightness-95
+brightness-100
+brightness-105
+brightness-110
+brightness-125
+brightness-150
+brightness-200
+
+Custom:
+brightness-[1.35]
+
+
+============================================================
+98. FILTER - CONTRAST
+============================================================
+
+contrast-0
+contrast-50
+contrast-75
+contrast-100
+contrast-125
+contrast-150
+contrast-200
+
+Custom:
+contrast-[1.4]
+
+
+============================================================
+99. FILTER - DROP SHADOW
+============================================================
+
+drop-shadow-xs
+drop-shadow-sm
+drop-shadow
+drop-shadow-md
+drop-shadow-lg
+drop-shadow-xl
+drop-shadow-2xl
+drop-shadow-none
+
+Color examples:
+drop-shadow-blue-500/30
+
+Custom:
+drop-shadow-[0_4px_8px_rgb(0_0_0/0.25)]
+
+
+============================================================
+100. FILTER - GRAYSCALE
+============================================================
+
+grayscale
+grayscale-0
+
+Custom:
+grayscale-[50%]
+
+
+============================================================
+101. FILTER - HUE ROTATE
+============================================================
+
+hue-rotate-0
+hue-rotate-15
+hue-rotate-30
+hue-rotate-60
+hue-rotate-90
+hue-rotate-180
+
+Negative:
+-hue-rotate-15
+-hue-rotate-30
+-hue-rotate-60
+-hue-rotate-90
+-hue-rotate-180
+
+Custom:
+hue-rotate-[125deg]
+
+
+============================================================
+102. FILTER - INVERT
+============================================================
+
+invert
+invert-0
+
+Custom:
+invert-[25%]
+
+
+============================================================
+103. FILTER - SATURATE
+============================================================
+
+saturate-0
+saturate-50
+saturate-100
+saturate-150
+saturate-200
+
+Custom:
+saturate-[1.3]
+
+
+============================================================
+104. FILTER - SEPIA
+============================================================
+
+sepia
+sepia-0
+
+Custom:
+sepia-[60%]
+
+
+============================================================
+105. BACKDROP FILTERS
+============================================================
+
+Backdrop blur:
+backdrop-blur-none
+backdrop-blur-xs
+backdrop-blur-sm
+backdrop-blur
+backdrop-blur-md
+backdrop-blur-lg
+backdrop-blur-xl
+backdrop-blur-2xl
+backdrop-blur-3xl
+
+Backdrop brightness:
+backdrop-brightness-50
+backdrop-brightness-75
+backdrop-brightness-100
+backdrop-brightness-125
+backdrop-brightness-150
+backdrop-brightness-200
+
+Backdrop contrast:
+backdrop-contrast-50
+backdrop-contrast-100
+backdrop-contrast-125
+backdrop-contrast-150
+backdrop-contrast-200
+
+Backdrop grayscale:
+backdrop-grayscale
+backdrop-grayscale-0
+
+Backdrop hue rotate:
+backdrop-hue-rotate-15
+backdrop-hue-rotate-30
+backdrop-hue-rotate-60
+backdrop-hue-rotate-90
+backdrop-hue-rotate-180
+
+Backdrop invert:
+backdrop-invert
+backdrop-invert-0
+
+Backdrop opacity:
+backdrop-opacity-0
+backdrop-opacity-50
+backdrop-opacity-100
+
+Backdrop saturate:
+backdrop-saturate-0
+backdrop-saturate-100
+backdrop-saturate-150
+backdrop-saturate-200
+
+Backdrop sepia:
+backdrop-sepia
+backdrop-sepia-0
+
+Glass example:
+bg-white/10 backdrop-blur-md border border-white/10
+
+
+============================================================
+106. TABLE BORDER COLLAPSE
+============================================================
+
+border-collapse
+border-separate
+
+
+============================================================
+107. TABLE BORDER SPACING
+============================================================
+
+border-spacing-0
+border-spacing-1
+border-spacing-2
+border-spacing-4
+
+Axes:
+border-spacing-x-4
+border-spacing-y-2
+
+Custom:
+border-spacing-[10px]
+
+
+============================================================
+108. TABLE LAYOUT
+============================================================
+
+table-auto
+table-fixed
+
+
+============================================================
+109. CAPTION SIDE
+============================================================
+
+caption-top
+caption-bottom
+
+
+============================================================
+110. TRANSITION PROPERTY
+============================================================
+
+transition
+transition-all
+transition-colors
+transition-opacity
+transition-shadow
+transition-transform
+transition-none
+
+Custom:
+transition-[width,height]
+
+
+============================================================
+111. TRANSITION BEHAVIOR
+============================================================
+
+transition-normal
+transition-discrete
+
+
+============================================================
+112. TRANSITION DURATION
+============================================================
+
+duration-0
+duration-75
+duration-100
+duration-150
+duration-200
+duration-300
+duration-500
+duration-700
+duration-1000
+
+Custom:
+duration-[250ms]
+
+
+============================================================
+113. TRANSITION TIMING FUNCTION
+============================================================
+
+ease-linear
+ease-in
+ease-out
+ease-in-out
+
+Custom:
+ease-[cubic-bezier(0.4,0,0.2,1)]
+
+
+============================================================
+114. TRANSITION DELAY
+============================================================
+
+delay-0
+delay-75
+delay-100
+delay-150
+delay-200
+delay-300
+delay-500
+delay-700
+delay-1000
+
+Custom:
+delay-[250ms]
+
+
+============================================================
+115. ANIMATION
+============================================================
+
+animate-none
+animate-spin
+animate-ping
+animate-pulse
+animate-bounce
+
+Custom:
+animate-[wiggle_1s_ease-in-out_infinite]
+
+
+============================================================
+116. TRANSFORM ORIGIN
+============================================================
+
+origin-center
+origin-top
+origin-top-right
+origin-right
+origin-bottom-right
+origin-bottom
+origin-bottom-left
+origin-left
+origin-top-left
+
+Custom:
+origin-[33%_75%]
+
+
+============================================================
+117. TRANSLATE
+============================================================
+
+translate-x-0
+translate-x-1
+translate-x-2
+translate-x-4
+translate-x-1/2
+translate-x-full
+
+translate-y-0
+translate-y-1
+translate-y-2
+translate-y-4
+translate-y-1/2
+translate-y-full
+
+Negative:
+-translate-x-1/2
+-translate-y-1/2
+-translate-x-full
+-translate-y-full
+
+Custom:
+translate-x-[25px]
+translate-y-[10%]
+
+Center absolute element:
+absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+
+
+============================================================
+118. ROTATE
+============================================================
+
+rotate-0
+rotate-1
+rotate-2
+rotate-3
+rotate-6
+rotate-12
+rotate-45
+rotate-90
+rotate-180
+
+Negative:
+-rotate-1
+-rotate-2
+-rotate-6
+-rotate-12
+-rotate-45
+-rotate-90
+-rotate-180
+
+Custom:
+rotate-[17deg]
+
+
+============================================================
+119. SCALE
+============================================================
+
+scale-0
+scale-50
+scale-75
+scale-90
+scale-95
+scale-100
+scale-105
+scale-110
+scale-125
+scale-150
+scale-200
+
+Axes:
+scale-x-50
+scale-x-100
+scale-x-150
+scale-y-50
+scale-y-100
+scale-y-150
+
+Custom:
+scale-[1.15]
+
+
+============================================================
+120. SKEW
+============================================================
+
+skew-x-0
+skew-x-1
+skew-x-2
+skew-x-3
+skew-x-6
+skew-x-12
+
+skew-y-0
+skew-y-1
+skew-y-2
+skew-y-3
+skew-y-6
+skew-y-12
+
+Negative:
+-skew-x-6
+-skew-y-6
+
+Custom:
+skew-x-[17deg]
+
+
+============================================================
+121. TRANSFORM STYLE / PERSPECTIVE / BACKFACE
+============================================================
+
+transform-flat
+transform-3d
+
+Perspective examples:
+perspective-none
+perspective-dramatic
+perspective-near
+perspective-normal
+perspective-midrange
+perspective-distant
+
+Perspective origin:
+perspective-origin-center
+perspective-origin-top
+perspective-origin-top-right
+perspective-origin-right
+perspective-origin-bottom-right
+perspective-origin-bottom
+perspective-origin-bottom-left
+perspective-origin-left
+perspective-origin-top-left
+
+Backface:
+backface-visible
+backface-hidden
+
+
+============================================================
+122. CURSOR
+============================================================
+
+cursor-auto
+cursor-default
+cursor-pointer
+cursor-wait
+cursor-text
+cursor-move
+cursor-help
+cursor-not-allowed
+cursor-none
+cursor-context-menu
+cursor-progress
+cursor-cell
+cursor-crosshair
+cursor-vertical-text
+cursor-alias
+cursor-copy
+cursor-no-drop
+cursor-grab
+cursor-grabbing
+cursor-all-scroll
+cursor-col-resize
+cursor-row-resize
+cursor-n-resize
+cursor-e-resize
+cursor-s-resize
+cursor-w-resize
+cursor-ne-resize
+cursor-nw-resize
+cursor-se-resize
+cursor-sw-resize
+cursor-ew-resize
+cursor-ns-resize
+cursor-nesw-resize
+cursor-nwse-resize
+cursor-zoom-in
+cursor-zoom-out
+
+Custom:
+cursor-[url(hand.cur),pointer]
+
+
+============================================================
+123. POINTER EVENTS
+============================================================
+
+pointer-events-none
+pointer-events-auto
+
+
+============================================================
+124. USER SELECT
+============================================================
+
+select-none
+select-text
+select-all
+select-auto
+
+
+============================================================
+125. RESIZE
+============================================================
+
+resize-none
+resize
+resize-y
+resize-x
+
+
+============================================================
+126. APPEARANCE
+============================================================
+
+appearance-none
+appearance-auto
+
+
+============================================================
+127. ACCENT COLOR
+============================================================
+
+accent-auto
+accent-current
+
+Pattern:
+accent-blue-500
+accent-red-500
+
+Custom:
+accent-[#123456]
+
+
+============================================================
+128. CARET COLOR
+============================================================
+
+caret-current
+caret-transparent
+
+Pattern:
+caret-blue-500
+caret-red-500
+
+Custom:
+caret-[#00ff99]
+
+
+============================================================
+129. COLOR SCHEME
+============================================================
+
+scheme-normal
+scheme-dark
+scheme-light
+scheme-light-dark
+scheme-only-dark
+scheme-only-light
+
+
+============================================================
+130. FIELD SIZING
+============================================================
+
+field-sizing-fixed
+field-sizing-content
+
+
+============================================================
+131. SCROLL BEHAVIOR
+============================================================
+
+scroll-auto
+scroll-smooth
+
+
+============================================================
+132. SCROLL MARGIN
+============================================================
+
+scroll-m-0
+scroll-m-1
+scroll-m-2
+scroll-m-4
+scroll-m-8
+
+Directions:
+scroll-mt-4
+scroll-mr-4
+scroll-mb-4
+scroll-ml-4
+
+Axes:
+scroll-mx-4
+scroll-my-4
+
+Logical:
+scroll-ms-4
+scroll-me-4
+
+Custom:
+scroll-mt-[100px]
+
+
+============================================================
+133. SCROLL PADDING
+============================================================
+
+scroll-p-0
+scroll-p-1
+scroll-p-2
+scroll-p-4
+scroll-p-8
+
+Directions:
+scroll-pt-4
+scroll-pr-4
+scroll-pb-4
+scroll-pl-4
+
+Axes:
+scroll-px-4
+scroll-py-4
+
+Logical:
+scroll-ps-4
+scroll-pe-4
+
+Custom:
+scroll-pt-[100px]
+
+
+============================================================
+134. SCROLL SNAP ALIGN
+============================================================
+
+snap-start
+snap-end
+snap-center
+snap-align-none
+
+
+============================================================
+135. SCROLL SNAP STOP
+============================================================
+
+snap-normal
+snap-always
+
+
+============================================================
+136. SCROLL SNAP TYPE
+============================================================
+
+snap-none
+snap-x
+snap-y
+snap-both
+snap-mandatory
+snap-proximity
+
+
+============================================================
+137. TOUCH ACTION
+============================================================
+
+touch-auto
+touch-none
+touch-pan-x
+touch-pan-left
+touch-pan-right
+touch-pan-y
+touch-pan-up
+touch-pan-down
+touch-pinch-zoom
+touch-manipulation
+
+
+============================================================
+138. WILL CHANGE
+============================================================
+
+will-change-auto
+will-change-scroll
+will-change-contents
+will-change-transform
+
+Custom:
+will-change-[opacity]
+
+
+============================================================
+139. SVG FILL
+============================================================
+
+fill-none
+fill-inherit
+fill-current
+fill-transparent
+fill-black
+fill-white
+
+Pattern:
+fill-blue-500
+fill-red-500
+
+Custom:
+fill-[#123456]
+
+
+============================================================
+140. SVG STROKE
+============================================================
+
+stroke-none
+stroke-inherit
+stroke-current
+stroke-transparent
+stroke-black
+stroke-white
+
+Pattern:
+stroke-blue-500
+stroke-red-500
+
+Custom:
+stroke-[#123456]
+
+
+============================================================
+141. SVG STROKE WIDTH
+============================================================
+
+stroke-0
+stroke-1
+stroke-2
+
+Custom:
+stroke-[3]
+
+
+============================================================
+142. SCREEN READER / ACCESSIBILITY
+============================================================
+
+sr-only
+not-sr-only
+
+Forced color adjust:
+forced-color-adjust-auto
+forced-color-adjust-none
+
+
+============================================================
+143. HOVER / FOCUS / ACTIVE STATES
+============================================================
+
+Prefix any utility with a state variant:
+
+hover:bg-blue-600
+hover:text-white
+hover:border-blue-500
+hover:shadow-lg
+hover:scale-105
+hover:-translate-y-1
+
+focus:outline-none
+focus:ring-2
+focus:ring-blue-500
+focus:border-blue-500
+
+focus-visible:outline-2
+focus-visible:outline-blue-500
+
+active:scale-95
+active:bg-blue-700
+
+visited:text-purple-600
+
+disabled:opacity-50
+disabled:cursor-not-allowed
+disabled:pointer-events-none
+
+enabled:hover:bg-blue-600
+
+
+============================================================
+144. COMMON PSEUDO-CLASS VARIANTS
+============================================================
+
+hover:
+focus:
+focus-within:
+focus-visible:
+active:
+visited:
+target:
+checked:
+indeterminate:
+default:
+required:
+valid:
+invalid:
+in-range:
+out-of-range:
+placeholder-shown:
+autofill:
+read-only:
+disabled:
+enabled:
+optional:
+open:
+empty:
+
+Examples:
+checked:bg-blue-600
+invalid:border-red-500
+required:border-blue-500
+open:bg-slate-100
+
+
+============================================================
+145. STRUCTURAL VARIANTS
+============================================================
+
+first:
+last:
+only:
+odd:
+even:
+first-of-type:
+last-of-type:
+only-of-type:
+empty:
+
+Examples:
+first:mt-0
+last:border-b-0
+odd:bg-gray-50
+even:bg-white
+
+
+============================================================
+146. NTH VARIANTS
+============================================================
+
+nth-1:
+nth-2:
+nth-3:
+nth-last-1:
+nth-of-type-2:
+nth-last-of-type-2:
+
+Arbitrary:
+nth-[2n+1]:
+nth-[3n]:
+
+Example:
+nth-3:font-bold
+
+
+============================================================
+147. PSEUDO-ELEMENT VARIANTS
+============================================================
+
+before:
+after:
+placeholder:
+file:
+marker:
+selection:
+first-line:
+first-letter:
+backdrop:
+
+Examples:
+before:content-['']
+before:absolute
+after:bg-blue-500
+placeholder:text-gray-400
+file:bg-blue-600
+selection:bg-blue-200
+first-letter:text-5xl
+
+
+============================================================
+148. GROUP VARIANTS
+============================================================
+
+Parent:
+group
+
+Child:
+group-hover:
+group-focus:
+group-active:
+group-open:
+group-checked:
+group-disabled:
+
+Example:
+<div className="group">
+  <h3 className="group-hover:text-blue-500">Title</h3>
+</div>
+
+Named group:
+group/card
+group-hover/card:text-blue-500
+
+
+============================================================
+149. PEER VARIANTS
+============================================================
+
+Sibling marker:
+peer
+
+Target variants:
+peer-hover:
+peer-focus:
+peer-checked:
+peer-invalid:
+peer-required:
+peer-disabled:
+peer-placeholder-shown:
+
+Example:
+<input type="checkbox" className="peer" />
+<div className="hidden peer-checked:block">
+  Checked!
+</div>
+
+Named peer:
+peer/email
+peer-invalid/email:text-red-500
+
+
+============================================================
+150. HAS / GROUP-HAS / PEER-HAS
+============================================================
+
+has-checked:
+has-focus:
+has-[selector]:
+
+group-has-checked:
+group-has-[selector]:
+
+peer-has-checked:
+peer-has-[selector]:
+
+Example:
+<label className="has-checked:bg-blue-50">
+  ...
+</label>
+
+
+============================================================
+151. NOT VARIANT
+============================================================
+
+not-focus:
+not-hover:
+not-disabled:
+not-first:
+
+Example:
+hover:not-focus:bg-gray-100
+
+
+============================================================
+152. RESPONSIVE DESIGN
+============================================================
+
+Default breakpoints:
+sm:   640px and above
+md:   768px and above
+lg:   1024px and above
+xl:   1280px and above
+2xl:  1536px and above
+
+Examples:
+w-full md:w-1/2 lg:w-1/3
+grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+text-2xl md:text-4xl lg:text-6xl
+hidden md:flex
+flex md:hidden
+
+Mobile-first rule:
+- Unprefixed class = mobile/base style
+- md:* = md breakpoint aur us se upar
+- lg:* = lg breakpoint aur us se upar
+
+Max-width breakpoint variants:
+max-sm:
+max-md:
+max-lg:
+max-xl:
+max-2xl:
+
+Range:
+md:max-lg:flex
+
+
+============================================================
+153. DARK MODE
+============================================================
+
+Examples:
+bg-white dark:bg-slate-950
+text-slate-900 dark:text-white
+border-gray-200 dark:border-slate-800
+
+Full example:
+<div className="bg-white text-black dark:bg-slate-950 dark:text-white">
+  Content
+</div>
+
+
+============================================================
+154. MOTION / ACCESSIBILITY MEDIA VARIANTS
+============================================================
+
+motion-safe:
+motion-reduce:
+
+Examples:
+motion-safe:animate-spin
+motion-reduce:transition-none
+
+Contrast:
+contrast-more:
+contrast-less:
+
+Forced colors:
+forced-colors:
+not-forced-colors:
+
+Examples:
+contrast-more:border-black
+forced-colors:outline
+
+
+============================================================
+155. ORIENTATION / PRINT VARIANTS
+============================================================
+
+portrait:
+landscape:
+print:
+
+Examples:
+portrait:flex-col
+landscape:flex-row
+print:hidden
+
+
+============================================================
+156. DIRECTION VARIANTS
+============================================================
+
+ltr:
+rtl:
+
+Examples:
+ltr:ml-4
+rtl:mr-4
+rtl:text-right
+
+
+============================================================
+157. DATA ATTRIBUTE VARIANTS
+============================================================
+
+Examples:
+data-active:bg-blue-600
+data-disabled:opacity-50
+
+Arbitrary:
+data-[state=open]:block
+data-[state=closed]:hidden
+
+
+============================================================
+158. ARIA ATTRIBUTE VARIANTS
+============================================================
+
+Examples:
+aria-checked:bg-blue-600
+aria-disabled:opacity-50
+aria-expanded:rotate-180
+
+Arbitrary:
+aria-[sort=ascending]:bg-blue-50
+
+
+============================================================
+159. SUPPORTS VARIANT
+============================================================
+
+Example:
+supports-[display:grid]:grid
+supports-[backdrop-filter]:backdrop-blur-md
+
+
+============================================================
+160. ARBITRARY VARIANTS
+============================================================
+
+Syntax:
+[selector]:utility
+
+Examples:
+[&>p]:text-gray-600
+[&>a]:text-blue-500
+[&>*]:mb-4
+[&_svg]:size-5
+[&:nth-child(3)]:font-bold
+
+
+============================================================
+161. ARBITRARY VALUES
+============================================================
+
+Syntax:
+utility-[custom-value]
+
+Examples:
+w-[347px]
+h-[42vh]
+p-[18px]
+m-[7px]
+top-[13px]
+bg-[#112233]
+text-[18px]
+leading-[1.7]
+grid-cols-[200px_1fr]
+shadow-[0_10px_40px_rgba(0,0,0,0.3)]
+rotate-[17deg]
+z-[999]
+opacity-[0.37]
+
+
+============================================================
+162. CSS VARIABLE VALUES
+============================================================
+
+Examples:
+bg-[var(--brand)]
+text-[var(--foreground)]
+w-[var(--sidebar-width)]
+h-[var(--header-height)]
+
+Tailwind v4 shorthand forms also exist for many utilities using CSS variables,
+for example utility-(--custom-property) where supported.
+
+
+============================================================
+163. IMPORTANT MODIFIER
+============================================================
+
+Use ! to force important behavior where needed.
+
+Examples:
+!block
+!hidden
+!bg-red-500
+hover:!bg-blue-600
+
+Use sparingly.
+
+
+============================================================
+164. COMMON RESPONSIVE PATTERNS
+============================================================
+
+Responsive container:
+<div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+</div>
+
+Responsive grid:
+<div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+</div>
+
+Responsive flex:
+<div className="flex flex-col gap-4 md:flex-row md:items-center">
+</div>
+
+Hide on mobile, show desktop:
+<div className="hidden md:block"></div>
+
+Show mobile, hide desktop:
+<div className="block md:hidden"></div>
+
+Responsive text:
+<h1 className="text-3xl font-bold sm:text-4xl lg:text-6xl"></h1>
+
+
+============================================================
+165. COMMON BUTTON CLASSES
+============================================================
+
+Primary:
+<button
+  className="
+    cursor-pointer
+    rounded-lg
+    bg-blue-600
+    px-5
+    py-2.5
+    text-sm
+    font-semibold
+    text-white
+    shadow-md
+    transition
+    duration-300
+    hover:bg-blue-500
+    active:scale-95
+    focus:outline-none
+    focus:ring-2
+    focus:ring-blue-500
+    focus:ring-offset-2
+    disabled:cursor-not-allowed
+    disabled:opacity-50
+  "
+>
+  Button
+</button>
+
+
+============================================================
+166. COMMON CARD CLASSES
+============================================================
+
+<div
+  className="
+    rounded-2xl
+    border
+    border-slate-800
+    bg-slate-950
+    p-6
+    text-white
+    shadow-lg
+    transition
+    duration-300
+    hover:-translate-y-1
+    hover:border-blue-500/50
+    hover:shadow-xl
+  "
+>
+  Card
+</div>
+
+
+============================================================
+167. COMMON INPUT CLASSES
+============================================================
+
+<input
+  className="
+    w-full
+    rounded-lg
+    border
+    border-slate-300
+    bg-white
+    px-4
+    py-3
+    text-slate-900
+    outline-none
+    transition
+    placeholder:text-slate-400
+    focus:border-blue-500
+    focus:ring-2
+    focus:ring-blue-500/20
+    disabled:cursor-not-allowed
+    disabled:opacity-50
+  "
+/>
+
+
+============================================================
+168. COMMON NAVBAR CLASSES
+============================================================
+
+<header
+  className="
+    sticky
+    top-0
+    z-50
+    border-b
+    border-slate-800
+    bg-slate-950/95
+    text-white
+    backdrop-blur
+  "
+>
+</header>
+
+Inner container:
+<div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+</div>
+
+
+============================================================
+169. CENTERING TECHNIQUES
+============================================================
+
+Horizontal block center:
+mx-auto
+
+Flex center:
+flex items-center justify-center
+
+Grid center:
+grid place-items-center
+
+Full screen center:
+min-h-screen flex items-center justify-center
+
+Absolute center:
+absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2
+
+
+============================================================
+170. POSITIONED BADGE
+============================================================
+
+<div className="relative">
+  <button>Cart</button>
+
+  <span
+    className="
+      absolute
+      -right-2
+      -top-2
+      flex
+      size-5
+      items-center
+      justify-center
+      rounded-full
+      bg-red-500
+      text-xs
+      font-bold
+      text-white
+    "
+  >
+    3
+  </span>
+</div>
+
+
+============================================================
+171. GLASSMORPHISM
+============================================================
+
+<div
+  className="
+    rounded-2xl
+    border
+    border-white/10
+    bg-white/10
+    p-6
+    shadow-xl
+    backdrop-blur-md
+  "
+>
+</div>
+
+
+============================================================
+172. GRADIENT TEXT
+============================================================
+
+<h1
+  className="
+    bg-linear-to-r
+    from-blue-400
+    via-cyan-400
+    to-purple-500
+    bg-clip-text
+    text-transparent
+  "
+>
+  Gradient Text
+</h1>
+
+
+============================================================
+173. IMAGE UTILITIES EXAMPLE
+============================================================
+
+<img
+  className="
+    h-64
+    w-full
+    rounded-xl
+    object-cover
+    object-center
+    shadow-lg
+  "
+  src="/image.jpg"
+  alt=""
+/>
+
+
+============================================================
+174. FLEX LAYOUT EXAMPLES
+============================================================
+
+Row:
+flex flex-row
+
+Column:
+flex flex-col
+
+Center:
+flex items-center justify-center
+
+Between:
+flex items-center justify-between
+
+Wrap:
+flex flex-wrap gap-4
+
+Responsive:
+flex flex-col md:flex-row
+
+
+============================================================
+175. GRID LAYOUT EXAMPLES
+============================================================
+
+3 columns:
+grid grid-cols-3 gap-4
+
+Responsive cards:
+grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3
+
+12-column:
+grid grid-cols-12 gap-4
+
+Sidebar:
+grid grid-cols-1 lg:grid-cols-[280px_1fr]
+
+
+============================================================
+176. MASK UTILITIES (ADVANCED / TAILWIND v4.1+)
+============================================================
+
+Tailwind includes mask utilities. Exact utility depends on property.
+
+Common families/patterns:
+mask-none
+mask-[url(...)]
+mask-linear-*
+mask-radial-*
+mask-conic-*
+
+Mask clip:
+mask-clip-border
+mask-clip-padding
+mask-clip-content
+mask-clip-fill
+mask-clip-stroke
+mask-clip-view
+
+Mask origin:
+mask-origin-border
+mask-origin-padding
+mask-origin-content
+mask-origin-fill
+mask-origin-stroke
+mask-origin-view
+
+Mask position:
+mask-center
+mask-top
+mask-bottom
+mask-left
+mask-right
+
+Mask repeat:
+mask-repeat
+mask-no-repeat
+mask-repeat-x
+mask-repeat-y
+
+Mask size:
+mask-auto
+mask-cover
+mask-contain
+
+Mask type:
+mask-type-alpha
+mask-type-luminance
+
+Custom values are also available with bracket syntax.
+
+
+============================================================
+177. CONTAINER QUERIES (ADVANCED)
+============================================================
+
+Mark a container:
+@container
+
+Named container:
+@container/sidebar
+
+Then use container-query variants, for example:
+@sm:flex-row
+@md:grid-cols-2
+
+Named:
+@sm/sidebar:block
+
+Container queries respond to parent/container size instead of viewport size.
+
+
+============================================================
+178. COMMON BREAKPOINT EXAMPLE
+============================================================
+
+<div
+  className="
+    w-full
+    bg-blue-500
+    p-4
+    text-sm
+
+    sm:w-1/2
+    sm:p-6
+
+    md:w-1/3
+    md:text-base
+
+    lg:w-1/4
+    lg:p-8
+
+    xl:text-lg
+
+    2xl:max-w-7xl
+  "
+>
+  Responsive Box
+</div>
+
+
+============================================================
+179. COMMON HOVER / TRANSITION EXAMPLE
+============================================================
+
+<div
+  className="
+    rounded-xl
+    bg-white
+    p-6
+    shadow-md
+    transition
+    duration-300
+    ease-in-out
+    hover:-translate-y-2
+    hover:scale-[1.02]
+    hover:shadow-xl
+  "
+>
+  Hover Me
+</div>
+
+
+============================================================
+180. COMMON DARK MODE CARD
+============================================================
+
+<div
+  className="
+    rounded-xl
+    border
+    border-gray-200
+    bg-white
+    p-6
+    text-gray-900
+    shadow-md
+
+    dark:border-slate-800
+    dark:bg-slate-950
+    dark:text-white
+  "
+>
+  Dark mode ready card
+</div>
+
+
+============================================================
+181. COMMON FORM STATE EXAMPLE
+============================================================
+
+<input
+  type="email"
+  required
+  className="
+    w-full
+    rounded-lg
+    border
+    border-gray-300
+    px-4
+    py-3
+    outline-none
+
+    placeholder:text-gray-400
+
+    focus:border-blue-500
+    focus:ring-2
+    focus:ring-blue-500/20
+
+    invalid:border-red-500
+    invalid:text-red-600
+
+    disabled:cursor-not-allowed
+    disabled:bg-gray-100
+    disabled:opacity-60
+  "
+/>
+
+
+============================================================
+182. QUICK CLASS PREFIX MAP
+============================================================
+
+Background:
+bg-*
+
+Text:
+text-*
+
+Border:
+border-*
+
+Padding:
+p-*, px-*, py-*, pt-*, pr-*, pb-*, pl-*
+
+Margin:
+m-*, mx-*, my-*, mt-*, mr-*, mb-*, ml-*
+
+Width:
+w-*
+
+Height:
+h-*
+
+Size:
+size-*
+
+Min width:
+min-w-*
+
+Max width:
+max-w-*
+
+Min height:
+min-h-*
+
+Max height:
+max-h-*
+
+Gap:
+gap-*, gap-x-*, gap-y-*
+
+Position:
+top-*, right-*, bottom-*, left-*, inset-*
+
+Translate:
+translate-x-*, translate-y-*
+
+Rotate:
+rotate-*
+
+Scale:
+scale-*
+
+Shadow:
+shadow-*
+
+Opacity:
+opacity-*
+
+Z index:
+z-*
+
+Grid:
+grid-cols-*, grid-rows-*, col-*, row-*
+
+Flex basis:
+basis-*
+
+Order:
+order-*
+
+Transition:
+transition-*, duration-*, delay-*, ease-*
+
+Responsive:
+sm:*, md:*, lg:*, xl:*, 2xl:*
+
+State:
+hover:*, focus:*, active:*, disabled:*, checked:*
+
+Dark:
+dark:*
+
+
+============================================================
+183. IMPORTANT LEARNING RULES
+============================================================
+
+1. Tailwind mobile-first hai:
+   base class pehle, phir sm:, md:, lg:, etc.
+
+2. Repeated numeric values spacing scale follow karte hain:
+   p-4 = 1rem / 16px by default.
+
+3. Same color system bohat utilities me reuse hota hai:
+   bg-blue-500
+   text-blue-500
+   border-blue-500
+   ring-blue-500
+   outline-blue-500
+   fill-blue-500
+   stroke-blue-500
+
+4. Arbitrary value use kar sakte ho jab default scale enough na ho:
+   w-[347px]
+   bg-[#101827]
+   grid-cols-[250px_1fr]
+
+5. State variants prefix hoti hain:
+   hover:bg-blue-600
+   focus:ring-2
+   disabled:opacity-50
+
+6. Variants stack ho sakti hain:
+   dark:md:hover:bg-blue-600
+
+7. React me always className use karo:
+   className="..."
+
+8. Dynamic class names ko complete strings ki form me rakhna safer hota hai:
+   Good:
+   const colors = {
+     blue: "bg-blue-500",
+     red: "bg-red-500",
+   }
+
+   Avoid constructing incomplete utility fragments dynamically where Tailwind cannot
+   detect the final class in source.
+
+
+============================================================
+184. MINI PRACTICE
+============================================================
+
+Task 1:
+Responsive card banao:
+- mobile full width
+- md par half width
+- lg par one-third width
+- rounded
+- shadow
+- hover move up
+
+Possible classes:
+w-full md:w-1/2 lg:w-1/3 rounded-xl shadow-lg transition hover:-translate-y-1
+
+
+Task 2:
+Responsive navbar:
+hidden md:flex
+
+Mobile button:
+md:hidden
+
+
+Task 3:
+Full screen centered login form:
+min-h-screen flex items-center justify-center
+
+
+Task 4:
+Three cards:
+grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6
+
+
+Task 5:
+Gradient heading:
+bg-linear-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent
+
+
+============================================================
+END
+============================================================
+
+NOTE:
+Tailwind is generated from utility patterns and supports arbitrary values/custom themes,
+so there is no practical finite text file containing every possible literal class string.
+This cheat sheet covers the major/core utility families and the class patterns you will use
+for React/Vite projects, including modern Tailwind v4 utility syntax.
